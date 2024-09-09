@@ -114,13 +114,13 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
 });
 
 
-if (!matchesMedicalQuestion(prompt)) {
-  return res.status(400).json({ error: "Invalid prompt. Please use medical-specific questions." });
-}
-
 app.post('/api/analyze-text', async (req, res) => {
   const { prompt } = req.body;
 
+  if (!matchesMedicalQuestion(prompt)) {
+    return res.status(400).json({ error: "Invalid prompt. Please use medical-specific questions." });
+  }
+  
   try {
     const result = await model.generateContent(prompt);
     res.json({ response: result.response.text() });
