@@ -14,44 +14,6 @@ const apiKey = process.env.API_KEY;
 app.use(cors());
 app.use(express.json());
 
-const validMedicalQuestions = [
-  "Describe the symptoms of",
-  "What are the treatments for",
-  "How can I manage",
-  "What is this condition?",
-  "Treatment for specific condition?",
-  "What are the causes of",
-  "How can I prevent",
-  "Is this condition contagious?",
-  "What medications are recommended for",
-  "What are the side effects of",
-  "What should I avoid if I have",
-  "What are the common risk factors for",
-  "What lifestyle changes can help with",
-  "How do I know if I need to see a doctor for",
-  "How long does recovery take for",
-  "What is the prognosis for",
-  "Can this condition be treated at home?",
-  "What are the warning signs of",
-  "What is the difference between",
-  "How can I relieve the symptoms of",
-  "When should I seek emergency care for",
-  "Is there a cure for",
-  "Can this condition recur?",
-  "What are common complications of",
-  "What are the early signs of",
-  "How does this condition affect daily life?",
-  "What dietary changes can help with",
-  "What are the latest treatment options for",
-  "Is surgery necessary for",
-  "What are the long-term effects of"
-];
-
-
-const matchesMedicalQuestion = (prompt) => {
-  return validMedicalQuestions.some((template) => prompt.startsWith(template));
-};
-
 // Image upload
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -70,7 +32,6 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
   const imagePath = req.file.path;
-
 
   try {
     const uploadResult = await fileManager.uploadFile(imagePath, {
@@ -113,14 +74,9 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
   }
 });
 
-
 app.post('/api/analyze-text', async (req, res) => {
   const { prompt } = req.body;
 
-  if (!matchesMedicalQuestion(prompt)) {
-    return res.status(400).json({ error: "Invalid prompt. Please use medical-specific questions." });
-  }
-  
   try {
     const result = await model.generateContent(prompt);
     res.json({ response: result.response.text() });
