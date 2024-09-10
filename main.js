@@ -103,6 +103,9 @@ app.post('/api/analyze-text', async (req, res) => {
   }
 });
 
+// Handle preflight requests
+app.options('/api/analyze-text', cors());
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
