@@ -79,6 +79,17 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
 app.post('/api/analyze-text', async (req, res) => {
   const { prompt } = req.body;
 
+   // Define the default prompt for the healthcare bot
+   const defaultPrompt = "You are a healthcare bot. Answer all questions related to healthcare.";
+
+   // If the user hasn't provided a prompt, use the default healthcare prompt
+   if (!prompt || prompt.trim() === '') {
+     prompt = defaultPrompt;
+   } else {
+     // Prepend the default healthcare context to the user's prompt
+     prompt = `${defaultPrompt}\n\n${prompt}`;
+   }
+
   try {
     const result = await model.generateContent(prompt);
     res.json({ response: result.response.text() });
