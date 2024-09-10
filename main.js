@@ -13,12 +13,12 @@ const apiKey = process.env.API_KEY;
 
 app.use(express.json());
 
-// Correct CORS Configuration
+//CORS Configuration
 app.use(cors({
-  origin: 'http://localhost:5173',  // Allow requests from your React frontend
-  methods: ['GET', 'POST', 'OPTIONS'],  // Include OPTIONS to handle preflight
-  allowedHeaders: ['Content-Type', 'Authorization'],  // Allow these headers
-  credentials: true  // Allow cookies if needed
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true 
 }));
 
 // Multer storage setup for image uploads
@@ -37,7 +37,7 @@ const genAI = new GoogleGenerativeAI(apiKey);
 const fileManager = new GoogleAIFileManager(apiKey);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-// Image analysis endpoint
+// Image analysis
 app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
   const imagePath = req.file.path;
 
@@ -81,18 +81,17 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
   }
 });
 
-// Text analysis endpoint with default healthcare bot prompt
+// Text analysis with default healthcare bot prompt
 app.post('/api/analyze-text', async (req, res) => {
   let { prompt } = req.body;
 
-  // Define the default prompt for the healthcare bot
+  // Default prompt
   const defaultPrompt = "You are a healthcare bot. Answer all questions related to healthcare.";
 
-  // Use the default prompt if none is provided
+  
   if (!prompt || prompt.trim() === '') {
     prompt = defaultPrompt;
   } else {
-    // Prepend the default healthcare context to the user's prompt
     prompt = `${defaultPrompt}\n\n${prompt}`;
   }
 
@@ -108,7 +107,6 @@ app.post('/api/analyze-text', async (req, res) => {
 // Handle CORS preflight requests (OPTIONS)
 app.options('*', cors());
 
-// Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
