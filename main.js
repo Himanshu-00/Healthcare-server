@@ -11,7 +11,11 @@ const app = express();
 const port = process.env.PORT || 7582;
 const apiKey = process.env.API_KEY;
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173',  // Allow only this origin (your frontend)
+  methods: ['GET', 'POST'],  // Allow these HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization']  // Allow specific headers
+}));
 app.use(express.json());
 
 // Image upload
