@@ -50,6 +50,8 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
       6. Provide warnings for severe conditions.
       
       **Disclaimer**: This analysis is AI-generated and not a substitute for medical advice.
+
+      Give one line words in bullet points
       `,
       {
         fileData: {
