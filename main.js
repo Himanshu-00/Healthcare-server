@@ -49,13 +49,12 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
 
     const result = await model.generateContent([
       `**Health Analysis Report**
-      1. Identify the body part, its location(brief of symptoms location) and symptoms (e.g., redness, swelling, bumps, skin-disease, bone-fractures and more).
+      1. Identify the body part, specify the location and symptoms (e.g., redness, swelling, bumps, skin-disease, bone-fractures and more).
       2. Suggest possible causes (eczema, acne, etc.).
       3. Recommend home remedies and Ayurvedic options.
       4. Estimate recovery time.
       5. Advise when to see a doctor.
       6. Provide warnings for severe conditions.
-      7. Specify its measurement
 
       **Disclaimer**: This analysis is AI-generated and not a substitute for medical advice.
       `,
