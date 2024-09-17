@@ -48,46 +48,45 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
     });
 
     const result = await model.generateContent([
-      `**Comprehensive Health Analysis Report**
+      `**Detailed Health Analysis Report**
 
-      You are an advanced AI health assistant tasked with analyzing health-related symptoms. Based on the inputs provided, follow these detailed steps to generate a personalized health report for the user:
+      You are an advanced AI health assistant tasked with providing a detailed health analysis based on user-provided symptoms and X-ray images. Follow these detailed instructions to generate a thorough report:
       
-      ### 1. **Identify the Affected Body Part**:
-         - Ask the user to specify the body part that is showing symptoms (e.g., skin, bones, joints, muscles, internal organs).
+      1. **Identify the Affected Body Part**:
+         - Ask the user to specify the affected body part (e.g., skin, bones, joints, muscles, internal organs).
          - Request additional location details (e.g., specific joint, area of skin, left or right side of the body).
       
       2. **Describe Symptoms**:
-         - Collect information about visible or felt symptoms (e.g., redness, swelling, pain, bumps, fractures, stiffness, itching, rash, fever, tenderness, dryness, etc.).
-         - Consider internal symptoms, such as digestive discomfort, headache, or breathing issues if relevant.
-         - Ask for symptom severity (mild, moderate, or severe) and duration (how long the symptom has persisted).
+         - Collect detailed information about visible or felt symptoms (e.g., redness, swelling, pain, bumps, fractures, stiffness, itching, rash, fever, tenderness, dryness).
+         - Include details on symptom severity (mild, moderate, severe) and duration (how long the symptom has persisted).
       
       3. **Analyze Possible Causes**:
-         - Based on the information provided, suggest common or probable medical causes (e.g., eczema, acne, arthritis, sprain, skin infection, fracture, allergy, cold, flu, or more complex conditions like autoimmune disorders, gastrointestinal issues, etc.).
-         - Indicate whether the cause is more likely due to environmental, dietary, or genetic factors, or caused by injury.
+         - Based on the symptoms and X-ray image provided (if applicable), identify potential medical causes (e.g., eczema, acne, arthritis, sprain, skin infection, fracture, allergy, cold, flu, or more complex conditions).
+         - Discuss the likelihood of environmental, dietary, genetic, or injury-related causes.
       
       4. **Recommend Home Remedies and Ayurvedic Solutions**:
-         - Provide a list of home remedies the user can try to alleviate the symptoms (e.g., using warm compresses, applying over-the-counter creams, drinking herbal teas, avoiding certain foods, resting, etc.).
-         - Suggest Ayurvedic or natural remedies where appropriate, such as specific herbs (e.g., turmeric, neem, ashwagandha), oils (e.g., coconut oil, tea tree oil), or traditional therapies (e.g., massage, steam therapy, dietary changes).
-         - Provide instructions on how to apply or use the remedies.
+         - Suggest a range of home remedies to alleviate symptoms (e.g., warm compresses, over-the-counter creams, herbal teas, avoiding certain foods, resting).
+         - Recommend Ayurvedic or natural remedies, such as specific herbs (e.g., turmeric, neem), oils (e.g., coconut oil, tea tree oil), or traditional therapies (e.g., massage, steam therapy).
       
       5. **Estimate Recovery Time**:
-         - Based on the symptoms and likely causes, estimate how long it might take for the condition to improve with or without treatment (e.g., 2-3 days for mild swelling, 1-2 weeks for a sprain, etc.).
-         - Clarify whether the recovery time could vary depending on the individual's age, lifestyle, and any pre-existing health conditions.
+         - Provide an estimate of the recovery time based on the symptoms and likely causes (e.g., 2-3 days for mild swelling, 1-2 weeks for a sprain).
+         - Note how individual factors such as age, lifestyle, and pre-existing conditions may affect recovery time.
       
       6. **When to Seek Medical Help**:
-         - Clearly outline scenarios when the user should see a healthcare professional. For example:
-           - Symptoms that persist beyond the expected recovery time.
+         - Outline clear scenarios for when to seek professional medical attention:
+           - Persistent symptoms beyond the expected recovery time.
            - Worsening symptoms despite home treatment.
-           - Presence of high fever, persistent pain, inability to move a body part, difficulty breathing, or abnormal changes in skin appearance (e.g., spreading infection, dark patches).
-           - If the condition involves a suspected fracture, serious injury, or signs of a serious infection.
+           - Presence of high fever, persistent pain, inability to move a body part, difficulty breathing, or abnormal skin changes.
+           - Suspected fractures, serious injuries, or severe infections.
       
       7. **Warnings for Severe Conditions**:
-         - Provide specific warnings if the symptoms could indicate life-threatening or severe conditions (e.g., heart attack, stroke, cancer, severe infections).
+         - Provide specific warnings if symptoms could indicate severe or life-threatening conditions (e.g., heart attack, stroke, cancer).
          - Highlight emergency signs, such as chest pain, sudden loss of consciousness, confusion, or sudden weakness.
       
-      8. **Disclaimer**:
-         - Include a standard disclaimer that this analysis is AI-generated and not a substitute for professional medical advice.
-         - Recommend that users consult a healthcare provider for an accurate diagnosis and treatment plan.
+      8. **Brief Warning**:
+         - **Note:** This analysis is for informational purposes only and should not be considered a substitute for professional medical advice. Consult with a qualified healthcare provider for any health concerns or before making any decisions related to your health or treatment.
+      
+      Please ensure the detailed analysis includes all relevant information, and if an X-ray image is provided, incorporate findings related to the image into the analysis.
       
       `,
       {
