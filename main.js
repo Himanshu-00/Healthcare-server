@@ -49,47 +49,28 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
 
     const result = await model.generateContent([
       `
-      You are tasked with generating a **detailed health report** based on specific patient symptoms. Follow the steps below to generate a thorough, actionable report for the patient. Provide only accurate, specific information related to the provided condition. Avoid general AI disclaimers.
+      You are tasked with generating an **informational health report** based on hypothetical symptoms provided. This report should present general health knowledge, educational content, and common factors related to various conditions based on public health data. This report is not meant to replace medical advice.
 
-      1. **Identify the Body Part and Symptoms**: 
-         - Start by describing the **affected body part** (e.g., skin, bones, muscles, internal organs).
-         - Clearly detail the **symptoms** observed (e.g., redness, swelling, pain, lumps, difficulty breathing).
-         - Mention **severity** (mild, moderate, severe) and **duration** (how long the symptoms have been present).
-      
-      2. **Provide a List of Possible Causes**:
-         - For each symptom, give **specific potential causes** (e.g., eczema, acne for skin issues, fractures for bone issues, asthma for breathing problems).
-         - Include **common and rare causes** and explain why each might apply.
-         - Use **medical risk factors** (e.g., age, lifestyle, recent activities) to tailor possible causes.
-      
-      3. **Recommend Home Remedies**:
-         - Provide **specific home remedies** or treatments the patient can try. Include:
-           - **Natural treatments** (e.g., aloe vera, ginger tea).
-           - **Ayurvedic options** (e.g., turmeric, yoga).
-           - Over-the-counter options if applicable.
-      
-      4. **Estimate Recovery Time**:
-         - Based on the severity of symptoms, provide an **estimated recovery time** (e.g., 3-7 days for mild symptoms, longer for severe conditions).
-         - Mention factors that could impact recovery (e.g., rest, diet, medication adherence).
-      
-      5. **When to See a Doctor**:
-         - Be specific about when to **consult a healthcare professional** (e.g., if symptoms last more than X days, or if there is fever, blood, persistent pain).
-         - List **emergency symptoms** that require immediate attention (e.g., chest pain, shortness of breath, sudden weakness).
-      
-      6. **Severe Condition Warnings**:
-         - Highlight any **severe conditions** that may present with similar symptoms (e.g., heart attack, stroke, infections, cancer).
-         - **Warn against self-treatment** for these severe symptoms and recommend immediate emergency care if necessary.
-      
-      7. **Suggest Diagnostic Tests**:
-         - Based on the symptoms, recommend **specific diagnostic tests** (e.g., X-rays for fractures, blood tests for infections).
-         - Explain the purpose of each diagnostic test and what it helps to identify.
-      
-      ### Example Patient Input:
-      - **Symptoms**: Skin redness and swelling, pain in joints
-      - **Duration**: 5 days
-      - **Additional Info**: The patient has a history of eczema and arthritis.
-      
-      Based on the input above, generate a detailed analysis using the steps provided.
-      
+1. **Symptoms Overview**:
+   - Start by describing the **hypothetical body part** that is affected (e.g., skin, bones, muscles, or internal organs).
+   - Provide a list of **common symptoms** that are associated with this condition (e.g., redness, swelling, pain, lumps, difficulty breathing).
+   
+2. **General Possible Causes**:
+   - List **common potential causes** for the symptoms described (e.g., eczema, acne for skin, fractures for bone issues, asthma for breathing problems).
+   - Explain why these conditions may commonly be associated with the symptoms.
+
+3. **General Home Care Tips**:
+   - Provide **general home care tips** that are common for such conditions.
+   - Offer tips that are **natural and common** (e.g., hydration, rest, diet).
+
+4. **When to Consult a Healthcare Professional**:
+   - Explain the **general signs** that may indicate when it is time to consult a healthcare professional for further advice.
+   - Focus on common emergency symptoms (e.g., chest pain, difficulty breathing).
+
+---
+
+
+
       `,
       {
         fileData: {
