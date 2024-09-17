@@ -52,7 +52,7 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
 
       You are an advanced AI health assistant tasked with analyzing health-related symptoms. Based on the inputs provided, follow these detailed steps to generate a personalized health report for the user:
       
-      1. **Identify the Affected Body Part**:
+      ### 1. **Identify the Affected Body Part**:
          - Ask the user to specify the body part that is showing symptoms (e.g., skin, bones, joints, muscles, internal organs).
          - Request additional location details (e.g., specific joint, area of skin, left or right side of the body).
       
