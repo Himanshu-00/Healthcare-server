@@ -67,9 +67,6 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
    - Explain the **general signs** that may indicate when it is time to consult a healthcare professional for further advice.
    - Focus on common emergency symptoms (e.g., chest pain, difficulty breathing).
 
----
-
-
 
       `,
       {
