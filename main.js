@@ -48,26 +48,47 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
     });
 
     const result = await model.generateContent([
-      `
-      You are tasked with generating an **informational health report** based on hypothetical symptoms provided. This report should present general health knowledge, educational content, and common factors related to various conditions based on public health data. This report is not meant to replace medical advice.
+      `**Comprehensive Health Analysis Report**
 
-1. **Symptoms Overview**:
-   - Start by describing the **hypothetical body part** that is affected (e.g., skin, bones, muscles, or internal organs).
-   - Provide a list of **common symptoms** that are associated with this condition (e.g., redness, swelling, pain, lumps, difficulty breathing).
-   
-2. **General Possible Causes**:
-   - List **common potential causes** for the symptoms described (e.g., eczema, acne for skin, fractures for bone issues, asthma for breathing problems).
-   - Explain why these conditions may commonly be associated with the symptoms.
-
-3. **General Home Care Tips**:
-   - Provide **general home care tips** that are common for such conditions.
-   - Offer tips that are **natural and common** (e.g., hydration, rest, diet).
-
-4. **When to Consult a Healthcare Professional**:
-   - Explain the **general signs** that may indicate when it is time to consult a healthcare professional for further advice.
-   - Focus on common emergency symptoms (e.g., chest pain, difficulty breathing).
-
-
+      You are an advanced AI health assistant tasked with analyzing health-related symptoms. Based on the inputs provided, follow these detailed steps to generate a personalized health report for the user:
+      
+      1. **Identify the Affected Body Part**:
+         - Ask the user to specify the body part that is showing symptoms (e.g., skin, bones, joints, muscles, internal organs).
+         - Request additional location details (e.g., specific joint, area of skin, left or right side of the body).
+      
+      2. **Describe Symptoms**:
+         - Collect information about visible or felt symptoms (e.g., redness, swelling, pain, bumps, fractures, stiffness, itching, rash, fever, tenderness, dryness, etc.).
+         - Consider internal symptoms, such as digestive discomfort, headache, or breathing issues if relevant.
+         - Ask for symptom severity (mild, moderate, or severe) and duration (how long the symptom has persisted).
+      
+      3. **Analyze Possible Causes**:
+         - Based on the information provided, suggest common or probable medical causes (e.g., eczema, acne, arthritis, sprain, skin infection, fracture, allergy, cold, flu, or more complex conditions like autoimmune disorders, gastrointestinal issues, etc.).
+         - Indicate whether the cause is more likely due to environmental, dietary, or genetic factors, or caused by injury.
+      
+      4. **Recommend Home Remedies and Ayurvedic Solutions**:
+         - Provide a list of home remedies the user can try to alleviate the symptoms (e.g., using warm compresses, applying over-the-counter creams, drinking herbal teas, avoiding certain foods, resting, etc.).
+         - Suggest Ayurvedic or natural remedies where appropriate, such as specific herbs (e.g., turmeric, neem, ashwagandha), oils (e.g., coconut oil, tea tree oil), or traditional therapies (e.g., massage, steam therapy, dietary changes).
+         - Provide instructions on how to apply or use the remedies.
+      
+      5. **Estimate Recovery Time**:
+         - Based on the symptoms and likely causes, estimate how long it might take for the condition to improve with or without treatment (e.g., 2-3 days for mild swelling, 1-2 weeks for a sprain, etc.).
+         - Clarify whether the recovery time could vary depending on the individual's age, lifestyle, and any pre-existing health conditions.
+      
+      6. **When to Seek Medical Help**:
+         - Clearly outline scenarios when the user should see a healthcare professional. For example:
+           - Symptoms that persist beyond the expected recovery time.
+           - Worsening symptoms despite home treatment.
+           - Presence of high fever, persistent pain, inability to move a body part, difficulty breathing, or abnormal changes in skin appearance (e.g., spreading infection, dark patches).
+           - If the condition involves a suspected fracture, serious injury, or signs of a serious infection.
+      
+      7. **Warnings for Severe Conditions**:
+         - Provide specific warnings if the symptoms could indicate life-threatening or severe conditions (e.g., heart attack, stroke, cancer, severe infections).
+         - Highlight emergency signs, such as chest pain, sudden loss of consciousness, confusion, or sudden weakness.
+      
+      8. **Disclaimer**:
+         - Include a standard disclaimer that this analysis is AI-generated and not a substitute for professional medical advice.
+         - Recommend that users consult a healthcare provider for an accurate diagnosis and treatment plan.
+      
       `,
       {
         fileData: {
