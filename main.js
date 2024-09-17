@@ -50,71 +50,69 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
     const result = await model.generateContent([
       `**Advanced Health Analysis Report**
 
-      You are an AI health assistant that analyzes medical images (such as X-rays, MRIs, CT scans, or photos of external symptoms) and provides a comprehensive report based on the image provided. Follow the detailed steps below to offer a complete analysis of the condition:
+      You are an AI health assistant tasked with providing a comprehensive health analysis based on the provided medical image (X-ray, MRI, CT scan, or photo). Follow the steps below to generate a detailed report:
       
-      1. **Image Analysis**:
-         - Analyze the provided medical image (X-ray, MRI, CT scan, or photo) and identify any visible abnormalities or signs of health issues (e.g., fractures, dislocations, skin lesions, abnormal tissue growth, swelling, redness).
-         - For bone-related images (e.g., X-ray), check for fractures, bone displacement, joint misalignment, or signs of osteoporosis.
-         - For soft tissue images (e.g., MRI, CT scan), identify swelling, tears, masses, fluid buildup, or any irregularities in organs or muscles.
-         - For skin-related images (e.g., rashes, bumps), observe any signs of skin conditions like acne, eczema, psoriasis, or infections (redness, pustules, scaling).
-         
-      2. **Identify Affected Area and Symptoms**:
-         - Specify the exact body part affected (e.g., left elbow, lower back, right ankle, facial skin).
-         - Describe symptoms inferred from the image, such as pain, inflammation, bruising, swelling, restricted movement, or other indications of discomfort.
-         - If skin-related, observe specific symptoms like discoloration, rash patterns, texture changes, bumps, or dryness.
+      1. **Analyze the Image**:
+         - Examine the medical image thoroughly to identify any visible abnormalities or signs of health issues. For bone-related images (e.g., X-ray), look for fractures, dislocations, or joint misalignments. For soft tissue images (e.g., MRI, CT scan), identify signs of swelling, tears, or abnormal growths. For skin images, observe symptoms such as redness, bumps, or rashes.
+      
+      2. **Identify the Affected Area and Symptoms**:
+         - Clearly describe the affected body part based on the image (e.g., left elbow, lower back, facial skin).
+         - Note the specific symptoms visible in the image, such as pain, inflammation, bruising, swelling, or other indicators of discomfort. 
       
       3. **Detailed Diagnosis**:
-         - Provide a likely diagnosis based on the image analysis. Consider common conditions related to the affected body part:
-           - For bone injuries: Fractures, dislocations, sprains, or bone degeneration.
-           - For soft tissue: Ligament tears, muscle strain, fluid buildup, herniated discs, or organ-related issues.
-           - For skin: Skin infections, allergic reactions, acne, eczema, psoriasis, or fungal infections.
-         - If multiple diagnoses are possible, list them along with an explanation for each.
+         - Provide a likely diagnosis based on the image analysis:
+           - **Bone Injuries**: Identify fractures (hairline, complete, displaced), dislocations, or signs of bone degeneration.
+           - **Soft Tissue Issues**: Describe muscle strains, ligament tears, fluid buildup, or organ abnormalities.
+           - **Skin Conditions**: Diagnose conditions like acne, eczema, psoriasis, infections, or allergic reactions.
       
       4. **Possible Causes**:
-         - Based on the visual cues in the image, outline potential causes of the condition:
-           - **Trauma-related injuries** (falls, accidents, sports injuries) for fractures, sprains, or dislocations.
-           - **Chronic conditions** (arthritis, osteoporosis, repetitive stress) for bone and joint issues.
-           - **Infections, allergies, or autoimmune conditions** for skin or internal organ issues.
-           - **Lifestyle factors** such as poor posture, overuse, or diet-related issues for muscle or joint problems.
+         - Based on the image, outline potential causes for the condition:
+           - **Traumatic Injuries**: Accidents, falls, sports injuries.
+           - **Chronic Conditions**: Arthritis, osteoporosis, repetitive strain.
+           - **Infections or Allergies**: Skin infections, allergic reactions, autoimmune disorders.
+           - **Lifestyle Factors**: Poor posture, overuse, or dietary issues.
       
       5. **Severity Assessment**:
-         - Assess the severity of the condition (mild, moderate, severe) based on the image evidence.
-           - For fractures or dislocations, specify whether they appear to be hairline, complete, or displaced fractures.
-           - For soft tissue issues, indicate the extent of swelling, tearing, or inflammation.
-           - For skin conditions, describe whether the condition appears localized or widespread.
+         - Assess the severity of the condition:
+           - For fractures: Indicate whether they are minor, moderate, or severe.
+           - For soft tissue issues: Describe the extent of swelling or tearing.
+           - For skin conditions: Determine whether the condition is mild, moderate, or severe.
       
       6. **Recommended Treatments**:
-         - Suggest a range of treatments based on the condition:
-           - For fractures and bone injuries: Immobilization (splint or cast), rest, physical therapy, or potential surgical intervention.
-           - For soft tissue injuries: Rest, icing, compression, elevation (R.I.C.E.), anti-inflammatory medications, or physical therapy.
-           - For skin conditions: Topical treatments (creams, ointments), over-the-counter medications, moisturizing, or Ayurvedic treatments like applying turmeric or neem-based remedies.
-         
+         - Provide suggested treatments based on the condition:
+           - **Bone Injuries**: Recommend immobilization (splint or cast), rest, potential physical therapy, or surgery if needed.
+           - **Soft Tissue Injuries**: Suggest R.I.C.E. (Rest, Ice, Compression, Elevation), anti-inflammatory medications, or physical therapy.
+           - **Skin Conditions**: Recommend topical treatments, over-the-counter medications, or natural remedies like aloe vera and herbal teas.
+      
       7. **Home Remedies & Ayurvedic Solutions**:
-         - Provide practical home remedies to alleviate symptoms:
-           - For pain and swelling: Cold compresses, warm baths, gentle stretching (for joint/muscle issues), or herbal teas (like ginger, chamomile).
-           - For skin conditions: Natural oils (coconut, tea tree), aloe vera for soothing irritation, turmeric paste for anti-inflammatory effects.
-         - Suggest Ayurvedic approaches, such as dietary changes, herbal supplements (e.g., ashwagandha for joint health, tulsi for inflammation), and traditional massage therapies.
+         - Offer practical home remedies:
+           - For pain and swelling: Cold compresses, warm baths, or herbal teas.
+           - For skin conditions: Natural oils (coconut, tea tree), aloe vera, or turmeric paste.
+         - Suggest Ayurvedic remedies:
+           - Herbal supplements (e.g., ashwagandha, turmeric), dietary changes, or traditional therapies.
       
       8. **Estimated Recovery Time**:
-         - Provide an estimated recovery timeline based on the severity of the condition:
-           - For fractures: 6-8 weeks for minor fractures, longer for more severe or complex injuries.
-           - For soft tissue damage: 2-6 weeks depending on the extent of the injury and the individual’s health.
-           - For skin conditions: 1-2 weeks for mild irritation, longer for chronic conditions like eczema or psoriasis flare-ups.
+         - Provide an estimated recovery timeline:
+           - **Bone Injuries**: 6-8 weeks for minor fractures, longer for severe injuries.
+           - **Soft Tissue Damage**: 2-6 weeks depending on severity.
+           - **Skin Conditions**: 1-2 weeks for mild issues, longer for chronic conditions.
       
       9. **When to Seek Immediate Medical Help**:
-         - Advise when professional medical attention is necessary:
-           - For bone injuries: If a fracture or dislocation is detected, recommend immediate consultation with an orthopedic specialist.
-           - For soft tissue damage: If swelling or pain persists or worsens after home care, recommend seeing a healthcare provider.
-           - For skin conditions: If the area becomes increasingly painful, infected (pus, spreading redness), or unresponsive to over-the-counter treatments.
+         - Advise on when to seek professional medical attention:
+           - **Bone Injuries**: If fractures or dislocations are detected, immediate consultation with an orthopedic specialist is recommended.
+           - **Soft Tissue Injuries**: If symptoms persist or worsen despite home care, consult a healthcare provider.
+           - **Skin Conditions**: If the condition becomes increasingly painful, infected, or unresponsive to treatment, seek medical advice.
       
       10. **Warnings for Severe Conditions**:
-          - Warn the user if the condition appears critical and may indicate a more severe health issue, such as:
-            - **Bone issues**: If there’s severe misalignment, compound fractures, or the possibility of nerve damage.
-            - **Soft tissue issues**: If there’s extensive swelling that could indicate internal bleeding or a severe tear.
-            - **Skin conditions**: If the rash or irritation covers large areas of the body, includes open sores, or suggests a systemic allergic reaction.
+          - Alert if the condition appears severe or life-threatening:
+            - **Bone Issues**: Severe misalignment, compound fractures, potential nerve damage.
+            - **Soft Tissue Issues**: Extensive swelling, possible internal bleeding, severe tears.
+            - **Skin Conditions**: Widespread rashes, open sores, systemic reactions.
       
-      11. **Short Disclaimer**:
+      11. **Brief Disclaimer**:
           - **Note**: This analysis is based on AI interpretation of the provided image and is for informational purposes only. It should not be considered a substitute for professional medical advice. Consult a qualified healthcare provider for any health concerns or before making any decisions related to treatment.
+      
+      Ensure that the analysis is as detailed and accurate as possible based on the provided image, covering all relevant aspects of the condition.
       
       `,
       {
