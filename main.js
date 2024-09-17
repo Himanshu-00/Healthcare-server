@@ -53,7 +53,7 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
 
       You are an AI health assistant tasked with providing a comprehensive health analysis based on the provided medical image (X-ray, MRI, CT scan, or photo). Follow the steps below to generate a detailed report:
       
-       1. **Analyze the Image**:
+       ### 1. **Analysis**:
          - Examine the medical image thoroughly to identify any visible abnormalities or signs of health issues. For bone-related images (e.g., X-ray), look for fractures, dislocations, or joint misalignments. For soft tissue images (e.g., MRI, CT scan), identify signs of swelling, tears, or abnormal growths. For skin images, observe symptoms such as redness, bumps, or rashes.
       
           2. **Identify the Affected Area and Symptoms**:
