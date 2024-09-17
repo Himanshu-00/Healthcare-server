@@ -51,24 +51,24 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
       `
   ### **Comprehensive Health Analysis Report**
 
-  1. **Identification of Affected Body Part and Symptoms:**
+  ### 1. **Identification of Affected Body Part and Symptoms:**
      - Clearly specify the **affected body part** (e.g., skin, bones, muscles, internal organs, respiratory system, etc.).
      - **Describe the location and nature of the symptoms** in detail (e.g., sharp pain, itching, swelling, lumps, redness, shortness of breath).
      - **Rate the severity** of the symptoms (mild, moderate, severe) and **duration** (how long they’ve been occurring, frequency).
      - Ask the patient whether they’ve experienced **similar symptoms in the past** and any **potential triggering factors** (e.g., physical activity, environmental exposure, seasonal changes).
 
-  2. **Symptom Development and Detailed Analysis:**
+     ### 2. **Symptom Development and Detailed Analysis:**
      - **Track the progression of symptoms**: when did they start, how have they evolved (worsened or improved), and whether they fluctuate or remain constant.
      - Consider **additional symptoms** that may be related (e.g., fever, nausea, dizziness, weakness, joint pain, swelling, skin changes).
      - Analyze if there are any **external factors** (e.g., diet, physical trauma, travel, recent illness, or stress) that may be contributing to the condition.
      - Ask about any **medications, supplements, or substances** the patient is taking.
 
-  3. **Common and Rare Causes of the Symptoms:**
+     ### 3. **Common and Rare Causes of the Symptoms:**
      - Provide a **list of potential causes** for the symptoms (e.g., infections, inflammatory conditions, autoimmune diseases, trauma, allergies, nutritional deficiencies, mental health factors).
      - **Differentiate between common and rare conditions** to help narrow down the cause (e.g., common cold vs. influenza, eczema vs. skin infection, tendonitis vs. a bone fracture).
      - Use **risk factors** such as age, gender, occupation, and medical history to tailor the analysis (e.g., joint pain may be more likely to indicate arthritis in older individuals).
 
-  4. **Comprehensive Condition Assessment:**
+     ### 4. **Comprehensive Condition Assessment:**
      - **Assess the likelihood of specific medical conditions** based on the reported symptoms. This may include:
        - **Respiratory issues**: Asthma, bronchitis, pneumonia, or COVID-19.
        - **Skin conditions**: Psoriasis, dermatitis, hives, or fungal infections.
@@ -77,7 +77,7 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
        - **Neurological symptoms**: Migraines, seizures, nerve damage, or strokes.
      - Offer explanations of **how these conditions manifest** and what specific symptoms set them apart.
 
-  5. **Suggested Home Remedies and Preventive Measures:**
+     ### 5. **Suggested Home Remedies and Preventive Measures:**
      - For **mild to moderate symptoms**, suggest **safe, evidence-based home remedies**:
        - **Skin conditions**: Moisturizing creams, cool compresses, aloe vera, and oatmeal baths.
        - **Digestive issues**: Probiotics, ginger tea, hydration, avoiding trigger foods.
@@ -85,24 +85,24 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
      - Provide **Ayurvedic or holistic remedies** where appropriate (e.g., turmeric for inflammation, yoga for stress relief, ginger for digestion, neem for skin).
      - Offer **prevention tips** based on condition type (e.g., improving posture, dietary changes, wearing protective clothing for sun-sensitive skin, or regular exercise for joint mobility).
 
-  6. **When to Consult a Doctor or Seek Immediate Help:**
+     ### 6. **When to Consult a Doctor or Seek Immediate Help:**
      - Outline **specific symptoms** that warrant professional medical attention (e.g., high fever, difficulty breathing, chest pain, severe or persistent symptoms, significant weight loss, or neurological deficits).
      - Emphasize **emergency warning signs** (e.g., signs of stroke, heart attack, sepsis, anaphylactic shock).
      - Recommend **seeking specialized medical care** for ongoing symptoms or chronic conditions (e.g., dermatologist for skin conditions, orthopedic specialist for joint or bone issues, gastroenterologist for persistent digestive problems).
      - Advise the **timing for follow-ups** (e.g., if symptoms persist beyond a certain number of days or worsen unexpectedly).
 
-  7. **Additional Diagnostics and Tests:**
+     ### 7. **Additional Diagnostics and Tests:**
      - Recommend **specific diagnostic tests** or imaging that might provide clarity (e.g., blood tests, X-rays, MRIs, allergy tests, or stool samples).
      - Provide explanations for what the tests can help diagnose (e.g., **blood work** for infections or nutritional deficiencies, **X-rays** for fractures, **allergy tests** for suspected allergic reactions).
      - Suggest **monitoring symptoms** through journals or symptom trackers, which the patient can share with their doctor for better insights.
 
-  8. **Lifestyle Adjustments and Long-Term Care:**
+     ### 8. **Lifestyle Adjustments and Long-Term Care:**
      - Offer **practical lifestyle changes** to manage or prevent symptoms (e.g., adopting a **balanced diet**, improving **sleep patterns**, practicing **stress management** techniques, incorporating **regular physical activity**).
      - Suggest **hygiene practices** (e.g., proper skin care, dental hygiene, or environmental precautions).
      - Highlight **importance of mental health** and offer ways to manage **stress, anxiety, or depression**, which could be impacting physical symptoms.
      - If applicable, recommend **support groups or community resources** for individuals with chronic conditions.
 
-  9. **Severe Condition Alerts and Warnings:**
+     ### 9. **Severe Condition Alerts and Warnings:**
      - Highlight any **severe conditions** the symptoms could indicate, such as:
        - **Cardiovascular emergencies** (e.g., heart attack, stroke).
        - **Severe infections** (e.g., sepsis, meningitis).
@@ -111,7 +111,7 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
      - Encourage patients to recognize these **red flags** and seek immediate emergency care if needed.
      - Warn against **self-medicating** in severe cases and emphasize professional diagnosis.
 
-  10. **Follow-Up and Ongoing Health Maintenance:**
+     ### 10. **Follow-Up and Ongoing Health Maintenance:**
      - Offer guidance on **next steps for health maintenance** after recovery:
        - **Regular check-ups** with a healthcare provider for ongoing conditions.
        - **Vaccination reminders** (e.g., flu shots, tetanus boosters).
