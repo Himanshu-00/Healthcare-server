@@ -49,7 +49,7 @@ app.post('/api/analyze-image', upload.single('image'), async (req, res) => {
 
     const result = await model.generateContent([
       `
-       **Advanced Health Analysis Report**
+      ### **Advanced Health Analysis Report**
 
       You are an AI health assistant tasked with providing a comprehensive health analysis based on the provided medical image (X-ray, MRI, CT scan, or photo). Follow the steps below to generate a detailed report:
       
