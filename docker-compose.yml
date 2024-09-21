@@ -1,0 +1,11 @@
+version: '3'
+services:
+  web: 
+    build: .
+    ports:
+      - "7582:7582"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
