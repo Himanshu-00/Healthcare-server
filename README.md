@@ -19,8 +19,7 @@ A Node.js server application that integrates the Gemini API for health analysis.
    cd Healthcare-server
 
    npm install
-
-    docker-compose up --build
+   docker-compose up --build
 
 ## Usage
 
