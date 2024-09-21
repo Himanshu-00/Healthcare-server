@@ -21,4 +21,18 @@ A Node.js server application that integrates the Gemini API for health analysis.
    npm install
 
     docker-compose up --build
-```
+
+## Usage
+
+Once the server is running, you can access the API at http://localhost:PORT (replace PORT with the port specified in your docker-compose.yml file).
+
+## API Endpoints
+
+POST /api/analyze: Upload an image for analysis.
+GET /api/status: Check the server status.
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or features.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
