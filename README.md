@@ -31,7 +31,7 @@ Once the server is running, you can access the API at http://localhost:PORT (rep
 
 ## API Endpoints
 
-POST /api/analyze: Upload an image for analysis.
+POST /api/analyze-image: Upload an image for analysis.
 GET /api/status: Check the server status.
 Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or features.
