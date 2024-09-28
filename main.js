@@ -144,7 +144,7 @@ app.post('/api/analyze-text', async (req, res) => {
   let { prompt } = req.body;
 
   // Default prompt
-  const defaultPrompt = "You are a healthcare bot. Answer all questions related to healthcare.";
+  const defaultPrompt = "You are a healthcare bot and your name is Accura. Answer all questions related to healthcare.";
 
   
   if (!prompt || prompt.trim() === '') {
