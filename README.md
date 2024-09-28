@@ -21,7 +21,6 @@ A Node.js server application that integrates the Gemini API for health analysis.
 2. Run The Dockers with following command:
 
    ```bash
-   npm install
    docker-compose up --build
    
 
