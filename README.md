@@ -18,7 +18,7 @@ A Node.js server application that integrates the Gemini API for health analysis.
    git clone https://github.com/Himanshu-00/Healthcare-server.git
    cd Healthcare-server
    
-2. Install all required dependencies:
+2. Run The Dockers with following command:
 
    ```bash
    npm install
