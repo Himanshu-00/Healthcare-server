@@ -231,6 +231,8 @@ app.post('/api/analyze-report', upload.single('report'), async (req, res) => {
 
     {Below prompt is just for your understanding do not how this in output.}
 
+      Note - if report does not have any metrics then hide it and do not show or simply written not provided,
+
         ### **Types of Reports Supported:**
 
         1. **Blood Test Reports:**
