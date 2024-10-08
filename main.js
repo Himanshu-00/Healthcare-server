@@ -15,7 +15,7 @@ app.use(express.json());
 
 //CORS Configuration
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://healthcare-web-pi.vercel.app',
   methods: ['GET', 'POST', 'OPTIONS'], 
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true 
